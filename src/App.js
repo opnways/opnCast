@@ -1,17 +1,20 @@
 
 import './scss/global.scss';
-import React from 'react';
+import React, {useState} from 'react';
 import './utils/firebase';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { Auth } from './pages';
+import { LoggedNavigation } from './routes';
 function App() {
- console.log(getAuth());
-  return (
-    <div className="App">
-      <header className="App-header">
-      OpnCast
-      </header>
-    </div>
-  );
+
+  const [user, setUser] = useState(undefined);
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    setUser(user)
+  })
+  if(user === undefined) return null;
+  return user ? <LoggedNavigation /> : <Auth />;
 }
 
 export default App;
