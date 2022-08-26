@@ -1,5 +1,5 @@
 
-import './App.scss';
+import './scss/global.scss';
 
 function App() {
  
