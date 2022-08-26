@@ -22,4 +22,4 @@ export  function Auth() {
     <div>
     {renderForm()}</div>
   )
-}
+} 
