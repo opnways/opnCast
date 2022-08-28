@@ -1,0 +1,33 @@
+@import "~/src/scss/index.scss";
+.auth-options{
+    margin-top: 50px;
+    > h1 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: $font-light;
+        text-align: center;
+    }
+    .ui.button.register, .ui.button.login{
+        width: 100%;
+        margin-bottom: 10px;
+        &.register{
+            background-color: $background-secondary;
+            color: $font-light;
+            &:hover{
+                background-color: $background-primary-hover;
+            }
+        }
+        &.login{
+            background-color: $background-dark;
+            color: $font-light;
+            &:hover{
+                background-color: $background-primary-hover;
+            }
+        }
+    }
+    .ui.button.login {
+        background-color: $background-light!important;
+        color: $font-dark!important;
+    }
+}
